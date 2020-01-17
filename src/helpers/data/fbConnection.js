@@ -3,7 +3,7 @@ import firebaseConfig from './config';
 
 
 const firebaseApp = () => {
-  // check if firebase app exists.  If not initialize.
+  // check if firebase app exists. If not initialize.
   if (!firebase.apps.length) {
     firebase.initializeApp(firebaseConfig);
   }

@@ -5,7 +5,7 @@ import fbConnection from "./helpers/data/fbConnection"
 import './App.scss';
 import NavBar from './components/navBar/NavBar';
 import Auth from "./components/auth/Auth"
-import None from "./components/None"
+import BoardContainer from './components/boardContainer/BoardContainer';
 
 fbConnection();
 
@@ -46,7 +46,7 @@ class App extends Component {
     // }
 
     if (this.state.authed){
-      componentToLoad = <None />;
+      componentToLoad = <BoardContainer />;
     }else{
       componentToLoad = <Auth />;
     }

@@ -10,7 +10,8 @@ const getBoardsByUid = (uid) => {
         } else {
             throw new Error("something wrong" + response.statusText)
         }
-    }).then((parsedResponse) => {
+    })
+    .then((parsedResponse) => {
         console.log("parsed", parsedResponse);
         const allBoardsObject = parsedResponse;
         const boards = [];
@@ -26,4 +27,11 @@ const getBoardsByUid = (uid) => {
     })
 }
 
-export default { getBoardsByUid }
+const getSingleBoard = (boardId) => {
+    return fetch(`${baseUrl}/boards/${boardId}.json`)
+    .then(response => response.json())
+}
+
+
+
+export default { getBoardsByUid, getSingleBoard }
